@@ -1,8 +1,6 @@
 from typing import Literal
 
-FizzBuzzOutput = Literal["Fizz"] | Literal["Buzz"] | Literal["FizzBuzz"]
-
-def fizz_buzz(number: int) -> FizzBuzzOutput | int:
+def fizz_buzz(number: int) -> str:
     if not 1 <= number <= 100:
         raise ValueError("1~100の間の数値を指定してください")
 
@@ -16,7 +14,7 @@ def fizz_buzz(number: int) -> FizzBuzzOutput | int:
     elif is_buzz_num:
         return "Buzz"
     else:
-        return number
+        return str(number)
 
 if __name__ == "__main__":
     for i in range(1, 101):
