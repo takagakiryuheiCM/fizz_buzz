@@ -15,7 +15,7 @@ def test_fizz_buzz_num():
 
 def test_normal_num():
     NORMAL_NUM = 1
-    assert fizz_buzz(NORMAL_NUM) == NORMAL_NUM
+    assert fizz_buzz(NORMAL_NUM) == str(NORMAL_NUM)
 
 def test_not_in_range_num():
     NOT_IN_RANGE_NUMBER_FIRST = 101
@@ -23,10 +23,10 @@ def test_not_in_range_num():
 
     with pytest.raises(ValueError) as e:
         fizz_buzz(NOT_IN_RANGE_NUMBER_FIRST)
-    assert str(e.value) == "1~100の間の数値を指定してください"
+    assert str(e.value) == f"1~100の間の数値を指定してください。不正な数値: {NOT_IN_RANGE_NUMBER_FIRST}"
 
     with pytest.raises(ValueError) as e:
         fizz_buzz(NOT_IN_RANGE_NUMBER_SECOND)
-    assert str(e.value) == "1~100の間の数値を指定してください"
+    assert str(e.value) == f"1~100の間の数値を指定してください。不正な数値: {NOT_IN_RANGE_NUMBER_SECOND}"
 
 
